@@ -4,6 +4,17 @@ class  Animal: # Родительский класс "Животных"
         self.name = name
         self.alive = True
         self.fed = False
+
+    def eat(self, food):
+        if food.edible:
+            print(f'{self.name} съел {food.name}')
+            self.alive = True
+            self.fed = True
+        else:
+            print(f'{self.name} не стал есть {food.name}')
+            self.alive = False
+            self.fed = False
+
 class Plant: #Родительский класс "Растений"
 
     def __init__(self, name):
@@ -11,27 +22,12 @@ class Plant: #Родительский класс "Растений"
         self.edible = False
 
 class Mammal(Animal): # Класс млекопитающих, дочерний класс "животных"
-    def eat(self, food):
-        if food.edible:
-            print(f'{self.name} съел {food.name}')
-            self.alive = True
-            self.fed = True
-        else:
-            print(f'{self.name} не стал есть {food.name}')
-            self.alive = False
-            self.fed = False
-
+    def __init__(self, name):
+        super().__init__(name)
 
 class Predator(Animal): # Класс хищников, дочерний класс "животных"
-    def eat(self, food):
-        if food.edible:
-            print(f'{self.name} съел {food.name}')
-            self.alive = True
-            self.fed = True
-        else:
-            print(f'{self.name} не стал есть {food.name}')
-            self.alive = False
-            self.fed = False
+    def __init__(self, name):
+        super().__init__(name)
 
 class Flower(Plant): # Класс "цветы", дочернийкласс "растений"
     def __init__(self, name):
