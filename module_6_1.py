@@ -22,23 +22,19 @@ class Plant: #Родительский класс "Растений"
         self.name = name
 
 class Mammal(Animal): # Класс млекопитающих, дочерний класс "животных"
-    def __init__(self, name):
-        super().__init__(name)
+    super(Animal).__init__(Animal)
 
 class Predator(Animal): # Класс хищников, дочерний класс "животных"
-    def __init__(self, name):
-        super().__init__(name)
+    super(Animal).__init__(Animal)
 
 class Flower(Plant): # Класс "цветы", дочернийкласс "растений"
-    def __init__(self, name):
-        super().__init__(name)
+    super(Plant).__init__(Plant)
 
 
 class Fruit(Plant): # Класс "фрукты", дочерний класса "растений"
     edible = True
 
-    def __init__(self, name):
-        super().__init__(name)
+    super(Plant).__init__(Plant)
 
 
 a1 = Predator('Волк с Уол-Стрит')
