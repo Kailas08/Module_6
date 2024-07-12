@@ -1,25 +1,25 @@
 class  Animal: # Родительский класс "Животных"
+    alive = True
+    fed = False
 
     def __init__(self, name):
         self.name = name
-        self.alive = True
-        self.fed = False
 
     def eat(self, food):
         if food.edible:
             print(f'{self.name} съел {food.name}')
-            self.alive = True
-            self.fed = True
+            Animal.alive = True
+            Animal.fed = True
         else:
             print(f'{self.name} не стал есть {food.name}')
-            self.alive = False
-            self.fed = False
+            Animal.alive = False
+            Animal.fed = False
 
 class Plant: #Родительский класс "Растений"
+    edible = False
 
     def __init__(self, name):
         self.name = name
-        self.edible = False
 
 class Mammal(Animal): # Класс млекопитающих, дочерний класс "животных"
     def __init__(self, name):
@@ -34,12 +34,12 @@ class Flower(Plant): # Класс "цветы", дочернийкласс "ра
         super().__init__(name)
 
 
-
 class Fruit(Plant): # Класс "фрукты", дочерний класса "растений"
+    edible = True
 
     def __init__(self, name):
         super().__init__(name)
-        self.edible = True
+
 
 a1 = Predator('Волк с Уол-Стрит')
 a2 = Mammal('Шимпанзе')
