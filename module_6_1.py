@@ -12,7 +12,7 @@ class  Animal: # Родительский класс "Животных"
             Animal.fed = True
         else:
             print(f'{self.name} не стал есть {food.name}')
-            Animal.alive = False
+            Animal.alive = True
             Animal.fed = False
 
 class Plant: #Родительский класс "Растений"
@@ -22,19 +22,18 @@ class Plant: #Родительский класс "Растений"
         self.name = name
 
 class Mammal(Animal): # Класс млекопитающих, дочерний класс "животных"
-    super(Animal).__init__(Animal)
+    pass
 
 class Predator(Animal): # Класс хищников, дочерний класс "животных"
-    super(Animal).__init__(Animal)
+    pass
 
 class Flower(Plant): # Класс "цветы", дочернийкласс "растений"
-    super(Plant).__init__(Plant)
-
+    pass
 
 class Fruit(Plant): # Класс "фрукты", дочерний класса "растений"
     edible = True
+    pass
 
-    super(Plant).__init__(Plant)
 
 
 a1 = Predator('Волк с Уол-Стрит')
