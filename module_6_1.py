@@ -7,14 +7,13 @@ class  Animal: # Родительский класс "Животных"
 
     def eat(self, food):
         if food.edible:
-            print(f'{self.name} съел {food.name}')
-            Animal.alive = True
+            Animal.alive = False
             Animal.fed = True
+            print(f'{self.name} съел {food.name}')
         else:
-            print(f'{self.name} не стал есть {food.name}')
             Animal.alive = True
             Animal.fed = False
-
+            print(f'{self.name} не стал есть {food.name}')
 class Plant: #Родительский класс "Растений"
     edible = False
 
@@ -37,7 +36,7 @@ class Fruit(Plant): # Класс "фрукты", дочерний класса "
 
 
 a1 = Predator('Волк с Уол-Стрит')
-a2 = Mammal('Шимпанзе')
+a2 = Mammal('Хатико')
 p1 = Flower('Цветик семицветик')
 p2 = Fruit('Заводной апельсин')
 
@@ -46,7 +45,7 @@ a1.eat(p1)
 print(a1.alive)
 print(a1.fed)
 
-print('Кормим шимпанзе')
+print('Кормим Хатико')
 a2.eat(p2)
 print(a2.alive)
 print(a2.fed)
